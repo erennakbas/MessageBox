@@ -55,12 +55,9 @@ public class AccessPage {
         view.setSize(120,40);
         view.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String content = AppManager.getManager().validate(codeText.getText(), passwordText.getText(), userNameText.getText(), userPasswordText.getText());
-                if (content!=null){
-                    MessageViewPage m=new MessageViewPage(userList, content);
-                    accessPage.setVisible(false);
-                }
 
+                MessagePage m=new MessagePage(userList);
+                accessPage.setVisible(false);
             }
         });
 
@@ -68,9 +65,9 @@ public class AccessPage {
         reset.setSize(120,40);
         reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                codeText.setText("");
+                codeText.setText(" ");
                 passwordText.setEchoChar(' ');
-                userNameText.setText("");
+                userNameText.setText(" ");
                 userPasswordText.setEchoChar(' ');
             }
         });
