@@ -4,6 +4,7 @@
     <list default="true" id="c96c42c4-e86e-47be-982f-517ccecca0ff" name="Changes" comment="GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AccessPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccessPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MessageRegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MessageRegisterPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667996451320</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="GUI">
+      <created>1667997421419</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667997421419</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

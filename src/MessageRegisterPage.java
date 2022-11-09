@@ -48,7 +48,8 @@ public class MessageRegisterPage {
 
         createMessage.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if(AppManager.getManager().addMessage(messageCodeName.getText(), passwordText.getText(), confirmPasswordText.getText(), messageContentText.getText(),  authUserName.getText())){
+                if(AppManager.getManager().addMessage(messageCodeName.getText(), passwordText.getText(),
+                        confirmPasswordText.getText(), messageContentText.getText(),  authUserName.getText())){
                     HomePage h=new HomePage(userList);
                     registerPage.setVisible(false);
                     }
@@ -123,10 +124,10 @@ public class MessageRegisterPage {
                 size.width , size.height + 20);
 
         size = messageContentText.getSize();
-        messageContent.setBounds(220 + in.left, 220 + in.top,
+        messageContentText.setBounds(220 + in.left, 220 + in.top,
                 size.width , size.height );
 
-        size = srcPane.getPreferredSize();
+        size = srcPane.getSize();
         srcPane.setBounds(300 + in.left, 250 + in.top,
                 size.width , size.height );
 
