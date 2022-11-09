@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class MessagePage {
-    public MessagePage(ArrayList<String> userList){
+public class MessageViewPage {
+    public MessageViewPage(ArrayList<String> userList, String content){
         JFrame message= new JFrame("Message");
         message.setSize(500,500);
         message.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -14,6 +14,7 @@ public class MessagePage {
         pane.setLayout(new FlowLayout());
 
         JTextArea messageArea = new JTextArea(20, 40);
+        messageArea.setText(content);
         JScrollPane scroll = new JScrollPane(messageArea,
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 

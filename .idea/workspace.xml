@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c96c42c4-e86e-47be-982f-517ccecca0ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AccessPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MessagePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RegisterPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cryptographer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IOHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccessPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccessPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MessagePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MessageViewPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MessageRegisterPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +45,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />

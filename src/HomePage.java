@@ -28,7 +28,7 @@ public class HomePage {
         JButton leaveAMessageButton = new JButton("Leave a message");
         leaveAMessageButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                RegisterPage register=new RegisterPage(userList);
+                MessageRegisterPage register=new MessageRegisterPage(userList);
                 homePage.setVisible(false);
             }
         });

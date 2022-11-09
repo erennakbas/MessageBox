@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class RegisterPage {
-    public RegisterPage(ArrayList<String> userList){    //user objesi alacak
+public class MessageRegisterPage {
+    public MessageRegisterPage(ArrayList<String> userList){    //user objesi alacak
         Object[] users = userList.toArray();
 
         JFrame registerPage = new JFrame("Register Form");
@@ -35,17 +35,26 @@ public class RegisterPage {
         JTextField messageCodeText= new JTextField();
         messageCodeText.setSize(150,30);
 
-        JLabel enterMessage=new JLabel("ENTER YOUR MESSAGE*");
-        enterMessage.setSize(200,20);
+        JLabel messageContent=new JLabel("ENTER YOUR MESSAGE*");
+        messageContent.setSize(200,20);
 
-        JTextArea enterMessageText= new JTextArea(5,10);
-        enterMessageText.setSize(400,120);
-        JScrollPane srcPane = new JScrollPane(enterMessageText);
+        JTextArea messageContentText= new JTextArea(5,10);
+        messageContentText.setSize(400,120);
+        JScrollPane srcPane = new JScrollPane(messageContentText);
         srcPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         JButton createMessage = new JButton("Create Message");
         createMessage.setSize(150,40);
 
+        createMessage.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(AppManager.getManager().addMessage(messageCodeName.getText(), passwordText.getText(), confirmPasswordText.getText(), messageContentText.getText(),  authUserName.getText())){
+                    HomePage h=new HomePage(userList);
+                    registerPage.setVisible(false);
+                    }
+                }
+
+        });
 
 
         JButton home = new JButton("HOME");
@@ -68,8 +77,8 @@ public class RegisterPage {
         pane.add(confirmPasswordText);
         pane.add(messageCodeName);
         pane.add(messageCodeText);
-        pane.add(enterMessage);
-        pane.add(enterMessageText);
+        pane.add(messageContent);
+        pane.add(messageContentText);
         pane.add(srcPane);
         pane.add(createMessage);
         pane.add(home);
@@ -109,12 +118,12 @@ public class RegisterPage {
         messageCodeText.setBounds(160 + in.left, 150 + in.top,
                 size.width , size.height);
 
-        size = enterMessage.getSize();
-        enterMessage.setBounds(30 + in.left, 240 + in.top,
+        size = messageContent.getSize();
+        messageContent.setBounds(30 + in.left, 240 + in.top,
                 size.width , size.height + 20);
 
-        size = enterMessageText.getSize();
-        enterMessageText.setBounds(220 + in.left, 220 + in.top,
+        size = messageContentText.getSize();
+        messageContent.setBounds(220 + in.left, 220 + in.top,
                 size.width , size.height );
 
         size = srcPane.getPreferredSize();
