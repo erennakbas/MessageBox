@@ -39,8 +39,8 @@ public class AccessPage {
         showButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(showButton.isSelected()){
-                    userPasswordText.setEchoChar((char)0);
-                    passwordText.setEchoChar((char)0);
+                    userPasswordText.setEchoChar(userPasswordText.getEchoChar());
+                    passwordText.setEchoChar(userPasswordText.getEchoChar());
                 }else{
                     userPasswordText.setEchoChar((char)8226);
                     passwordText.setEchoChar((char)8226);
