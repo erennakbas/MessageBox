@@ -39,8 +39,8 @@ public class AccessPage {
         showButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(showButton.isSelected()){
-                    userPasswordText.setEchoChar(userPasswordText.getEchoChar());
-                    passwordText.setEchoChar(userPasswordText.getEchoChar());
+                    passwordText.setEchoChar((char)0);
+                    userPasswordText.setEchoChar((char)0);
                 }else{
                     userPasswordText.setEchoChar((char)8226);
                     passwordText.setEchoChar((char)8226);
@@ -65,10 +65,10 @@ public class AccessPage {
         reset.setSize(120,40);
         reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                codeText.setText(" ");
-                passwordText.setEchoChar(' ');
-                userNameText.setText(" ");
-                userPasswordText.setEchoChar(' ');
+                codeText.setText("");
+                passwordText.setText("");
+                userNameText.setText("");
+                userPasswordText.setText("");
             }
         });
 

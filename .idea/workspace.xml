@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c96c42c4-e86e-47be-982f-517ccecca0ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AccessPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MessagePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RegisterPage.java" afterDir="false" />
+    <list default="true" id="c96c42c4-e86e-47be-982f-517ccecca0ff" name="Changes" comment="GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccessPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccessPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +62,21 @@
       <option name="presentableId" value="Default" />
       <updated>1667837811112</updated>
     </task>
+    <task id="LOCAL-00001" summary="GUI">
+      <created>1667996247533</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667996247533</updated>
+    </task>
+    <task id="LOCAL-00002" summary="GUI">
+      <created>1667996451320</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667996451320</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,5 +89,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI" />
   </component>
 </project>
