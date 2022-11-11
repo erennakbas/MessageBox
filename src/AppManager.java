@@ -1,5 +1,6 @@
 import java.security.*;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.HashMap;
 
 public class AppManager {
@@ -29,7 +30,6 @@ public class AppManager {
 
     }
     private void parseMessages(String messages){
-        System.out.println(messages);
         if (messages.length()==0) return;
         String[] messageLines= messages.split("\n");
         int i=0;
@@ -53,7 +53,10 @@ public class AppManager {
     //passwordler kıyaslanacak sonra onaylanırsa hashlenecek.
     public boolean addMessage(String codeName, String password, String confirmPassword, String content, String receiverName){
         if (!messageIndexes.containsKey(codeName)){
-            messageList.add(new Message(codeName, password, content, receiverName));
+            if (!password.equals(confirmPassword)){
+                System.out.println("Password's are not the same.");
+            }
+            messageList.add(new Message(codeName, this.hashPassword(password), content, receiverName));
             messageIndexes.put(codeName, messageList.size()-1);
             System.out.println("App Manager'a mesaj eklendi.");
             return true;
@@ -78,24 +81,28 @@ public class AppManager {
         if (user!=null && message!=null){
             if (user.getUsername().equals(message.getReceiverName())){
                 if (this.comparePasswords(userPassword, user.getHashedPassword()) && this.comparePasswords(messagePassword, message.getHashedPassword())){
+                    System.out.println("validate edildi");
+
                     return message.getContent();
                 }
             }
         }
         System.out.println("validate edilmedi");
+
         return null;
     }
     public boolean comparePasswords(String passwordAttempt, String hashedPassword){
-        System.out.println("Password attempt: "+ passwordAttempt + "hashedPassword: "+ hashedPassword);
-        return passwordAttempt.equals(hashedPassword);
+        return hashPassword(passwordAttempt).equals(hashedPassword);
     }
-    public byte[] hashPassword(String password){
+    public String hashPassword(String password){
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] encodedhash = digest.digest(password.getBytes());
-            return encodedhash;
+            byte[] hash = digest.digest(password.getBytes());
+            String hashedString = Base64.getEncoder().encodeToString(hash);
+            System.out.println(hashedString);
+            return hashedString;
         }
-        catch (Exception e){e.printStackTrace(); return new byte[0];}
+        catch (Exception e){e.printStackTrace(); return new String("");}
     }
     public static AppManager getManager(){
         return manager;

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -10,8 +8,17 @@ public class Main {
         String users = new String(ioHandler.readUserList());
         AppManager appManager = new AppManager(messages, users);
         //AuthorizationManager authorizationManager = new AuthorizationManager(appManager);
-
-
+            Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+                public void run() {
+                    try {
+                        ioHandler.writeMessages(AppManager.getManager().messageList);
+                    }
+                    catch (Exception e){
+                        System.out.println("Error while writing the message list.");
+                        e.printStackTrace();
+                    }
+                }
+            }));
         HomePage h= new HomePage(appManager.getUsernames());
 
         }

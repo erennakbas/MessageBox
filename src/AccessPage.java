@@ -55,8 +55,12 @@ public class AccessPage {
         view.setSize(120,40);
         view.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
-                MessageViewPage m=new MessageViewPage(userList,"s");
+                String content = AppManager.getManager().validate(codeText.getText(), passwordText.getText(), userNameText.getText(), userPasswordText.getText());
+                if (content!=null){
+                    MessageViewPage m=new MessageViewPage(userList, content);
+                    accessPage.setVisible(false);
+                }
+                MessageViewPage m=new MessageViewPage(userList,content);
                 accessPage.setVisible(false);
             }
         });

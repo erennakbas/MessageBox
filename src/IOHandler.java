@@ -2,20 +2,23 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Base64;
 
 public class IOHandler {
+    String messageFileName;
     private Path messagesPath;
     private Path usersPath;
     private FileWriter messOut;
-    private FileWriter userOut;
 
-    public IOHandler(String messageFile, String userFile){
+
+    public IOHandler(String messageFileName, String userFileName){
         try {
-            this.messagesPath = Paths.get(messageFile);
-            this.usersPath = Paths.get(userFile);
-            this.messOut = new FileWriter(messageFile, true);
-            this.userOut = new FileWriter(userFile, true);
+            this.messageFileName = messageFileName;
+            this.messagesPath = Paths.get(messageFileName);
+            this.usersPath = Paths.get(userFileName);
+
+//            this.userOut = new FileWriter(userFile, true);
 
         }catch(Exception e){System.out.println(e);}
     }
@@ -32,10 +35,13 @@ public class IOHandler {
 //        return Base64.getDecoder().decode(lines);
 
     }
-    public void writeDataFiles(byte[] encryptedMessages, byte[] encryptedUsers ) throws IOException{
-        messOut.write(Base64.getEncoder().encodeToString(encryptedMessages));
-        userOut.write(Base64.getEncoder().encodeToString(encryptedUsers));
-        userOut.close();
+    public void writeMessages(ArrayList<Message> messageList) throws IOException{
+        this.messOut = new FileWriter(messageFileName);
+        for (Message m : messageList){
+            messOut.write(m.toString()+"\n");
+        }
+//        userOut.write(Base64.getEncoder().encodeToString(encryptedUsers));
+//        userOut.close();
         messOut.close();
     }
 

@@ -14,5 +14,9 @@ public class User {
     public String getHashedPassword() {
         return hashedPassword;
     }
+    @Override
+    public String toString() {
+        return username+"-"+hashedPassword;
+    }
 
 }

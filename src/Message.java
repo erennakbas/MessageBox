@@ -27,4 +27,9 @@ public class Message {
     public String getContent() {
         return content;
     }
+
+    @Override
+    public String toString() {
+        return codeName+"-"+hashedPassword+"-"+content+"-"+receiverName;
+    }
 }

@@ -48,8 +48,8 @@ public class MessageRegisterPage {
 
         createMessage.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if(AppManager.getManager().addMessage(messageCodeName.getText(), passwordText.getText(),
-                        confirmPasswordText.getText(), messageContentText.getText(),  authUserName.getText())){
+                if(AppManager.getManager().addMessage(messageCodeText.getText(), passwordText.getText(),
+                        confirmPasswordText.getText(), messageContentText.getText(),  authUsers.getSelectedItem().toString())){
                     HomePage h=new HomePage(userList);
                     registerPage.setVisible(false);
                     }
