@@ -15,6 +15,7 @@ public class MessageViewPage {
 
         JTextArea messageArea = new JTextArea(20, 40);
         messageArea.setText(content);
+        messageArea.setEditable(false);
         JScrollPane scroll = new JScrollPane(messageArea,
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 

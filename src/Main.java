@@ -2,15 +2,19 @@ public class Main {
 
     public static void main(String[] args) {
         try{
-        IOHandler ioHandler = new IOHandler("messages.txt", "users.txt");
-        String messages = new String(ioHandler.readMessageList());
-        String users = new String(ioHandler.readUserList());
+
+        IOHandler ioHandler = new IOHandler("messages.data", "users.data");
+        String messages = new String(ioHandler.readMessageFile());
+        String users = new String(ioHandler.readUserFile());
         AppManager appManager = new AppManager(messages, users);
-        //AuthorizationManager authorizationManager = new AuthorizationManager(appManager);
+
+        HomePage homePage= new HomePage(appManager.getUsernames());
+
             Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
                 public void run() {
                     try {
-                        ioHandler.writeMessages(AppManager.getManager().messageList, AppManager.getManager().userList);
+                        //Write new messages before terminating the program.
+                        ioHandler.writeMessages(AppManager.getManager().messageList);
                     }
                     catch (Exception e){
                         System.out.println("Error while writing the message list.");
@@ -18,8 +22,6 @@ public class Main {
                     }
                 }
             }));
-        HomePage h= new HomePage(appManager.getUsernames());
-
         }
         catch (Exception e){
             e.printStackTrace();

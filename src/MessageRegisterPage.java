@@ -48,6 +48,7 @@ public class MessageRegisterPage {
 
         createMessage.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                //Call addMessage function to execute the create message button's click event.
                 if(AppManager.getManager().addMessage(messageCodeText.getText(), passwordText.getText(),
                         confirmPasswordText.getText(), messageContentText.getText(),  authUsers.getSelectedItem().toString())){
                     HomePage h=new HomePage(userList);

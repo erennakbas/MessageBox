@@ -55,13 +55,13 @@ public class AccessPage {
         view.setSize(120,40);
         view.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String content = AppManager.getManager().validate(codeText.getText(), passwordText.getText(), userNameText.getText(), userPasswordText.getText());
+                //Call validateUser function to execute the VIEW button's click event, authorize the user.
+                String content = AppManager.getManager().validateUser(codeText.getText(), passwordText.getText(), userNameText.getText(), userPasswordText.getText());
+                //If user is authorized (A non null value returned from the function)
                 if (content!=null){
                     MessageViewPage m=new MessageViewPage(userList, content);
                     accessPage.setVisible(false);
                 }
-                MessageViewPage m=new MessageViewPage(userList,content);
-                accessPage.setVisible(false);
             }
         });
 
