@@ -7,18 +7,15 @@ import java.util.Base64;
 
 public class IOHandler {
     String messageFileName;
-    String userFileName;
     private Path messagesPath;
     private Path usersPath;
     private FileWriter messOut;
-    private FileWriter userOut;
     Cryptographer crypto;
 
     public IOHandler(String messageFileName, String userFileName){
         try {
             this.crypto = new Cryptographer();
             this.messageFileName = messageFileName;
-            this.userFileName=userFileName;
             this.messagesPath = Paths.get(messageFileName);
             this.usersPath = Paths.get(userFileName);
 
