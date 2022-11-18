@@ -7,8 +7,8 @@ public class AppManager {
     // Static self-referential attribute for other classes to use.
     // When AppManager is created, this attribute is reachable from other classes.
     private static AppManager manager;
-    public ArrayList<User> userList;
-    public ArrayList<Message> messageList;
+    private ArrayList<User> userList;
+    private ArrayList<Message> messageList;
     private HashMap<String, Integer> messageIndexes = new HashMap<String,Integer>();
     private HashMap<String, Integer> userIndexes = new HashMap<String,Integer>();
     public AppManager(String messages, String users){
@@ -114,5 +114,9 @@ public class AppManager {
     }
     public static AppManager getManager(){
         return manager;
+    }
+
+    public ArrayList<Message> getMessageList() {
+        return messageList;
     }
 }

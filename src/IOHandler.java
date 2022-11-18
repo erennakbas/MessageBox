@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.Base64;
 
 public class IOHandler {
-    String messageFileName;
+    private String messageFileName;
     private Path messagesPath;
     private Path usersPath;
     private FileWriter messOut;
-    Cryptographer crypto;
+    private Cryptographer crypto;
 
     public IOHandler(String messageFileName, String userFileName){
         try {

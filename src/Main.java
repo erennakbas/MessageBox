@@ -14,7 +14,7 @@ public class Main {
                 public void run() {
                     try {
                         //Write new messages before terminating the program.
-                        ioHandler.writeMessages(AppManager.getManager().messageList);
+                        ioHandler.writeMessages(AppManager.getManager().getMessageList());
                     }
                     catch (Exception e){
                         System.out.println("Error while writing the message list.");
