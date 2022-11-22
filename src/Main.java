@@ -4,8 +4,8 @@ public class Main {
         try{
 
         IOHandler ioHandler = new IOHandler("messages.data", "users.data");
-        String messages = new String(ioHandler.readMessageFile());
-        String users = new String(ioHandler.readUserFile());
+        String messages = ioHandler.readMessageFile();
+        String users = ioHandler.readUserFile();
         AppManager appManager = new AppManager(messages, users);
 
         HomePage homePage= new HomePage(appManager.getUsernames());

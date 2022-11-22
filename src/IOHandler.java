@@ -23,17 +23,17 @@ public class IOHandler {
         }catch(Exception e){System.out.println(e);}
     }
     //Method for reading plainText to get an utilizable arraylist for encrypting
-    public byte[] readMessageFile() throws Exception{
+    public String readMessageFile() throws Exception{
         String line = String.join( "",Files.readAllLines(this.messagesPath));
         byte[] bytes = Base64.getDecoder().decode(line);
-        return crypto.decrypt(bytes);
+        return new String(crypto.decrypt(bytes));
 //
     }
     //Method for reading cipherText to get an utilizable arraylist for decrypting
-    public byte[] readUserFile() throws Exception{
+    public String readUserFile() throws Exception{
         String line = String.join( "",Files.readAllLines(this.usersPath));
         byte[] bytes = Base64.getDecoder().decode(line);
-        return crypto.decrypt(bytes);
+        return new String(crypto.decrypt(bytes));
     }
     //Method for saving new messages to our txt file.
     public void writeMessages(ArrayList<Message> messageList) throws Exception{
